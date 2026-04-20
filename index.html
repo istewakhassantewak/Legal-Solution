@@ -14,93 +14,116 @@
     <style>
         .font-eb-garamond {
             font-family: "EB Garamond", serif;
+        }
 
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 5.5rem;
+        }
+
+        /* Readable light text on photo heroes (DaisyUI overlay alone can be too light). */
+        .hero-on-image .hero-overlay {
+            background-color: rgb(0 0 0 / 0.58);
+        }
+
+        .hero-on-image .hero-content {
+            color: #fff;
+            text-shadow: 0 1px 2px rgb(0 0 0 / 0.65), 0 2px 12px rgb(0 0 0 / 0.35);
         }
     </style>
     <title>Legal Solution</title>
 </head>
 
 <body class="font-eb-garamond">
-    <header class="container mx-auto">
-
-        <nav class="navbar">
-            <div class="navbar-start">
-                <div class="dropdown">
-                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 6h16M4 12h8m-8 6h16" />
-                        </svg>
+    <div
+        class="sticky top-0 z-50 w-full border-b border-base-300 bg-base-100 text-neutral-900 shadow-md">
+        <div class="container mx-auto px-4 sm:px-6">
+            <nav class="navbar px-0 text-neutral-900 [&_.menu>li>a]:text-neutral-900 [&_.btn-ghost]:text-neutral-900">
+                <div class="navbar-start">
+                    <div class="dropdown">
+                        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden" aria-label="Open menu">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h8m-8 6h16" />
+                            </svg>
+                        </div>
+                        <ul tabindex="-1"
+                            class="menu menu-sm dropdown-content rounded-box z-[60] mt-3 w-52 border border-base-200 bg-base-100 p-2 text-neutral-900 shadow-lg">
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="#cases">Cases</a></li>
+                            <li><a href="#blog">Blog</a></li>
+                            <li><a href="#contact">Contact Us</a></li>
+                        </ul>
                     </div>
-                    <ul tabindex="-1"
-                        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                        <li><a>Home</a></li>
-                        <li><a>Services</a></li>
-                        <li><a>Cases</a></li>
-                        <li><a>Blog</a></li>
-                        <li><a>Contact Us</a></li>
+                    <a class="btn btn-ghost w-32 max-w-[8rem] px-2" href="#home"><img src="images/logo2.png"
+                            alt="Legal Solution logo" class="max-h-10 w-auto object-contain"></a>
+                </div>
+                <div class="navbar-center hidden lg:flex">
+                    <ul class="menu menu-horizontal px-1 flex-nowrap text-sm xl:text-base">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services <i
+                                    class="fa-solid fa-angle-right text-xs opacity-70"></i></a></li>
+                        <li><a href="#cases">Cases <i class="fa-solid fa-angle-right text-xs opacity-70"></i></a></li>
+                        <li><a href="#blog">Blog <i class="fa-solid fa-angle-right text-xs opacity-70"></i></a></li>
+                        <li><a href="#contact">Contact Us <i
+                                    class="fa-solid fa-angle-right text-xs opacity-70"></i></a></li>
                     </ul>
                 </div>
-                <a class="btn btn-ghost w-32"><img src="images/logo2.png" alt=""></a>
-            </div>
-            <div class="navbar-center hidden lg:flex">
-                <ul class="menu menu-horizontal px-1">
-                    <li><a>Home</a></li>
-                    <li><a>Services <i class="fa-solid fa-angle-right"></i></a></li>
-                    <li><a>Cases <i class="fa-solid fa-angle-right"></i></a></li>
-                    <li><a>Blog <i class="fa-solid fa-angle-right"></i></a></li>
-                    <li><a>Contact Us <i class="fa-solid fa-angle-right"></i></a></li>
-                </ul>
-            </div>
-            <div class="navbar-end">
-                <a class="btn bg-[#B68C5A] text-white">Free Consultation</a>
-            </div>
-        </nav>
+                <div class="navbar-end">
+                    <a class="btn bg-[#B68C5A] text-white btn-sm sm:btn-md whitespace-nowrap" href="#contact">Free Consultation</a>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <header id="home" class="container mx-auto px-4 sm:px-6">
         <!-- provider section -->
-        <div class="hero min-h-[550px]" style="background-image: url(/images/banner.png);">
-            <div class="hero-overlay"></div>
-            <div class="hero-content text-neutral-content text-center">
-                <div class="max-w-md">
-                    <h1 class="mb-5 text-5xl font-bold">We Provide Effective Legal Solutions</h1>
-                    <p class="mb-5">There are many variations of passages of Lorem Ipsum available, but the majority
-                        have suffered alteration in some form,
-                        by injected humour.</p>
-                    <div class="flex flex-col md:flex-row gap-6
-                    justify-center items-center">
-                        <div class="flex-1">
-                            <label class="input validator">
-                                <input class="text-black" type="email" placeholder="Search your services" required />
+        <div class="hero hero-on-image min-h-[min(100svh,600px)] sm:min-h-[550px] rounded-none sm:rounded-lg overflow-hidden bg-cover bg-center"
+            style="background-image: url(images/banner.png);">
+            <div class="hero-overlay z-0"></div>
+            <div class="hero-content relative z-10 text-center px-4 py-16 sm:py-10">
+                <div class="max-w-lg w-full">
+                    <h1 class="mb-5 text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">We Provide Effective Legal
+                        Solutions</h1>
+                    <p class="mb-5 text-base sm:text-lg max-w-prose mx-auto">Connect with experienced attorneys for
+                        business, family, criminal, and tax matters.
+                        Clear guidance, practical strategies, and responsive support from consultation to resolution.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-stretch sm:items-center">
+                        <div class="w-full sm:flex-1 sm:max-w-md">
+                            <label class="input w-full bg-white/95">
+                                <input class="text-black w-full bg-transparent" type="search" name="q"
+                                    placeholder="Search your services" autocomplete="off" />
                             </label>
-                            <div class="validator-hint hidden">Enter valid email address</div>
                         </div>
-                        <button class="btn bg-[#B68C5A] text-white w-36 border-none">Join</button>
+                        <button type="button" class="btn bg-[#B68C5A] text-white w-full sm:w-36 border-none shrink-0">
+                            Search</button>
                     </div>
                 </div>
             </div>
         </div>
     </header>
-    <main class="container mx-auto">
+    <main class="container mx-auto px-4 sm:px-6">
         <!-- legal practices -->
-        <section class="my-24 text-center space-y-7">
-            <h1 class="text-5xl font-extrabold">The Legal Practice Area</h1>
-            <p class="md:px-56">There are many variations of passages of Lorem Ipsum available, but the majority have
-                suffered alteration
-                in some form,
-                by injected humour.</p>
-            <div class="grid grid-cols-2 md:grid-cols-3">
+        <section id="services" class="my-16 sm:my-24 text-center space-y-7 scroll-mt-24">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold px-2">The Legal Practice Area</h2>
+            <p class="max-w-3xl mx-auto md:px-8 lg:px-16 px-2">Our team covers the matters that affect people and
+                organizations most often, with
+                focused experience across key practice areas so you get advice that fits your situation.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                 <!-- card 1 -->
                 <div class="card bg-base-100 w-auto shadow-sm">
                     <figure class="px-10 pt-10">
-                        <img src="images/business.png" alt="Shoes" class="rounded-xl" />
+                        <img src="images/business.png" alt="Business law icon" class="rounded-xl" />
                     </figure>
                     <div class="card-body items-center text-center md:px-16">
                         <h2 class="card-title">Business Law</h2>
-                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have
-                            suffered alteration in some form,
-                            by injected humour.</p>
+                        <p>Contracts, compliance, disputes, and day-to-day counsel for startups and established
+                            companies.</p>
                         <div class="card-actions">
-                            <button class="btn  bg-[#B68C5A] text-white rounded-full border-none text-xs md:mb-16"><i
+                            <button type="button" aria-label="Learn more about business law"
+                                class="btn  bg-[#B68C5A] text-white rounded-full border-none text-xs md:mb-16"><i
                                     class="fa-solid fa-arrow-right-long"></i></button>
                         </div>
                     </div>
@@ -108,15 +131,15 @@
                 <!-- card 2 -->
                 <div class="card bg-base-100 w-auto shadow-sm bg-gradient-to-b from-[#F3F3F3] to-transparent">
                     <figure class="px-10 pt-10">
-                        <img src="images/business.png" alt="Shoes" class="rounded-xl" />
+                        <img src="images/criminal.png" alt="Criminal law icon" class="rounded-xl" />
                     </figure>
                     <div class="card-body items-center text-center md:px-16">
-                        <h2 class="card-title">Business Law</h2>
-                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have
-                            suffered alteration in some form,
-                            by injected humour.</p>
+                        <h2 class="card-title">Criminal Law</h2>
+                        <p>Defense representation and strategic guidance when you are under investigation or facing
+                            charges.</p>
                         <div class="card-actions">
-                            <button class="btn  bg-[#B68C5A] text-white rounded-full border-none text-xs md:mb-16"><i
+                            <button type="button" aria-label="Learn more about criminal law"
+                                class="btn  bg-[#B68C5A] text-white rounded-full border-none text-xs md:mb-16"><i
                                     class="fa-solid fa-arrow-right-long"></i></button>
                         </div>
                     </div>
@@ -124,15 +147,15 @@
                 <!-- card 3 -->
                 <div class="card bg-base-100 w-auto shadow-sm">
                     <figure class="px-10 pt-10">
-                        <img src="images/business.png" alt="Shoes" class="rounded-xl" />
+                        <img src="images/child.png" alt="Child law icon" class="rounded-xl" />
                     </figure>
                     <div class="card-body items-center text-center md:px-16">
-                        <h2 class="card-title">Business Law</h2>
-                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have
-                            suffered alteration in some form,
-                            by injected humour.</p>
+                        <h2 class="card-title">Child Support</h2>
+                        <p>Fair arrangements for support, custody-related financial issues, and modifications when
+                            circumstances change.</p>
                         <div class="card-actions">
-                            <button class="btn  bg-[#B68C5A] text-white rounded-full border-none text-xs md:mb-16"><i
+                            <button type="button" aria-label="Learn more about child support"
+                                class="btn  bg-[#B68C5A] text-white rounded-full border-none text-xs md:mb-16"><i
                                     class="fa-solid fa-arrow-right-long"></i></button>
                         </div>
                     </div>
@@ -140,15 +163,15 @@
                 <!-- card 4 -->
                 <div class="card bg-base-100 w-auto shadow-sm">
                     <figure class="px-10 pt-10">
-                        <img src="images/business.png" alt="Shoes" class="rounded-xl" />
+                        <img src="images/divorce.png" alt="Divorce law icon" class="rounded-xl" />
                     </figure>
                     <div class="card-body items-center text-center md:px-16">
-                        <h2 class="card-title">Business Law</h2>
-                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have
-                            suffered alteration in some form,
-                            by injected humour.</p>
+                        <h2 class="card-title">Divorce Law</h2>
+                        <p>Thoughtful advocacy in separation, property division, and agreements that protect your
+                            interests.</p>
                         <div class="card-actions">
-                            <button class="btn  bg-[#B68C5A] text-white rounded-full border-none text-xs md:mb-16"><i
+                            <button type="button" aria-label="Learn more about divorce law"
+                                class="btn  bg-[#B68C5A] text-white rounded-full border-none text-xs md:mb-16"><i
                                     class="fa-solid fa-arrow-right-long"></i></button>
                         </div>
                     </div>
@@ -156,15 +179,15 @@
                 <!-- card 5 -->
                 <div class="card bg-base-100 w-auto shadow-sm bg-gradient-to-b from-[#F3F3F3] to-transparent">
                     <figure class="px-10 pt-10">
-                        <img src="images/business.png" alt="Shoes" class="rounded-xl" />
+                        <img src="images/education.png" alt="Education law icon" class="rounded-xl" />
                     </figure>
                     <div class="card-body items-center text-center md:px-16">
-                        <h2 class="card-title">Business Law</h2>
-                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have
-                            suffered alteration in some form,
-                            by injected humour.</p>
+                        <h2 class="card-title">Education Law</h2>
+                        <p>Support for students, families, and institutions on policies, discipline, and regulatory
+                            matters.</p>
                         <div class="card-actions">
-                            <button class="btn  bg-[#B68C5A] text-white rounded-full border-none text-xs md:mb-16"><i
+                            <button type="button" aria-label="Learn more about education law"
+                                class="btn  bg-[#B68C5A] text-white rounded-full border-none text-xs md:mb-16"><i
                                     class="fa-solid fa-arrow-right-long"></i></button>
                         </div>
                     </div>
@@ -172,201 +195,352 @@
                 <!-- card 6 -->
                 <div class="card bg-base-100 w-auto shadow-sm">
                     <figure class="px-10 pt-10">
-                        <img src="images/business.png" alt="Shoes" class="rounded-xl" />
+                        <img src="images/tax.png" alt="Tax law icon" class="rounded-xl" />
                     </figure>
                     <div class="card-body items-center text-center md:px-16">
-                        <h2 class="card-title">Business Law</h2>
-                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have
-                            suffered alteration in some form,
-                            by injected humour.</p>
+                        <h2 class="card-title">Tax Law</h2>
+                        <p>Planning, audits, disputes, and compliance so tax issues are handled with clarity and
+                            care.</p>
                         <div class="card-actions">
-                            <button class="btn  bg-[#B68C5A] text-white rounded-full border-none text-xs md:mb-16"><i
+                            <button type="button" aria-label="Learn more about tax law"
+                                class="btn  bg-[#B68C5A] text-white rounded-full border-none text-xs md:mb-16"><i
                                     class="fa-solid fa-arrow-right-long"></i></button>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- client -->
-        <section class="my-24 text-center space-y-7">
-            <h1 class="text-5xl font-extrabold">What Our Client Say</h1>
-            <p class="md:px-56">There are many variations of passages of Lorem Ipsum available, but the majority have
-                suffered alteration in some form,
-                by injected humour.</p>
+        <!-- client / success stories -->
+        <section id="cases" class="my-16 sm:my-24 text-center space-y-7 scroll-mt-24">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold px-2">What Our Clients Say</h2>
+            <p class="max-w-3xl mx-auto md:px-8 lg:px-16 px-2">Clients choose us for straightforward communication,
+                careful preparation, and outcomes
+                aligned with their goals in business and personal legal matters.</p>
             <div class="carousel w-full">
                 <div id="slide1" class="carousel-item relative w-full">
-                    <div class="hero min-h-[550px]" style="background-image: url(/images/banner.png);">
-                        <div class="hero-overlay"></div>
-                        <div class="hero-content text-neutral-content text-center">
-                            <div class="max-w-md flex flex-col justify-center items-center space-y-8 space-y-8">
-                                <img class="w-20 h-20  rounded-full border-4 border-white"
-                                    src="images/WhatsApp Image 2025-01-28 at 01.03.55_345cb80b.jpg" alt="">
-                                <h1 class="mb-5 text-5xl font-bold">Istewak Hassan Tewak</h1>
-                                <p class="mb-5">
-                                    UIX Designer
+                    <div class="hero hero-on-image min-h-[min(100svh,520px)] sm:min-h-[550px]" style="background-image: url(images/banner.png);">
+                        <div class="hero-overlay z-0"></div>
+                        <div class="hero-content relative z-10 text-center px-4 py-8 sm:py-10">
+                            <div class="max-w-md w-full flex flex-col justify-center items-center space-y-6 sm:space-y-8">
+                                <img class="w-20 h-20 rounded-full border-4 border-white object-cover"
+                                    src="images/WhatsApp Image 2025-01-28 at 01.03.55_345cb80b.jpg"
+                                    alt="Portrait of Istewak Hassan Tewak">
+                                <h3 class="mb-2 text-2xl sm:text-3xl md:text-5xl font-bold">Istewak Hassan Tewak</h3>
+                                <p class="mb-2 text-base sm:text-lg">
+                                    UI/UX Designer
                                 </p>
-                                <p class="mb-5">
-                                    Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-                                    piece
-                                    of classical Latin literature
-                                    from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at
-                                    Hampden-Sydney College in Virginia,
-                                    looked up one of the more obscure Latin words, consectetur.
+                                <p class="mb-5 text-sm sm:text-base">
+                                    The team explained every step of my contract review in plain language, responded
+                                    quickly, and helped me avoid costly mistakes before I signed. I felt heard and
+                                    well represented throughout.
                                 </p>
 
                             </div>
                         </div>
                     </div>
-                    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-                        <a href="#slide4" class="btn btn-circle">❮</a>
-                        <a href="#slide2" class="btn btn-circle">❯</a>
+                    <div
+                        class="pointer-events-none absolute left-2 right-2 top-1/2 z-20 flex -translate-y-1/2 transform justify-between gap-2 sm:left-5 sm:right-5 [&_a]:pointer-events-auto">
+                        <a href="#slide4" class="btn btn-circle btn-sm sm:btn-md" aria-label="Previous testimonial">❮</a>
+                        <a href="#slide2" class="btn btn-circle btn-sm sm:btn-md" aria-label="Next testimonial">❯</a>
                     </div>
                 </div>
                 <div id="slide2" class="carousel-item relative w-full">
-                    <div class="hero min-h-[550px]" style="background-image: url(/images/banner.png);">
-                        <div class="hero-overlay"></div>
-                        <div class="hero-content text-neutral-content text-center">
-                            <div class="max-w-md flex flex-col justify-center items-center space-y-8">
-                                <img class="w-20 h-20  rounded-full border-4 border-white"
-                                    src="images/WhatsApp Image 2025-01-28 at 01.03.55_345cb80b.jpg" alt="">
-                                <h1 class="mb-5 text-5xl font-bold">Istewak Hassan Tewak</h1>
-                                <p class="mb-5">
-                                    UIX Designer
+                    <div class="hero hero-on-image min-h-[min(100svh,520px)] sm:min-h-[550px]" style="background-image: url(images/banner.png);">
+                        <div class="hero-overlay z-0"></div>
+                        <div class="hero-content relative z-10 text-center px-4 py-8 sm:py-10">
+                            <div class="max-w-md w-full flex flex-col justify-center items-center space-y-6 sm:space-y-8">
+                                <img class="w-20 h-20 rounded-full border-4 border-white object-cover"
+                                    src="images/slider-1.jpg" alt="Portrait of Sarah Mitchell">
+                                <h3 class="mb-2 text-2xl sm:text-3xl md:text-5xl font-bold">Sarah Mitchell</h3>
+                                <p class="mb-2 text-base sm:text-lg">
+                                    Small business owner
                                 </p>
-                                <p class="mb-5">
-                                    Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-                                    piece
-                                    of classical Latin literature
-                                    from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at
-                                    Hampden-Sydney College in Virginia,
-                                    looked up one of the more obscure Latin words, consectetur.
+                                <p class="mb-5 text-sm sm:text-base">
+                                    From entity formation to a supplier dispute, Legal Solution gave practical options—not
+                                    just legal theory. Their preparation for mediation made a real difference in the
+                                    result we achieved.
                                 </p>
 
                             </div>
                         </div>
                     </div>
-                    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-                        <a href="#slide1" class="btn btn-circle">❮</a>
-                        <a href="#slide3" class="btn btn-circle">❯</a>
+                    <div
+                        class="pointer-events-none absolute left-2 right-2 top-1/2 z-20 flex -translate-y-1/2 transform justify-between gap-2 sm:left-5 sm:right-5 [&_a]:pointer-events-auto">
+                        <a href="#slide1" class="btn btn-circle btn-sm sm:btn-md" aria-label="Previous testimonial">❮</a>
+                        <a href="#slide3" class="btn btn-circle btn-sm sm:btn-md" aria-label="Next testimonial">❯</a>
                     </div>
                 </div>
                 <div id="slide3" class="carousel-item relative w-full">
-                    <div class="hero min-h-[550px]" style="background-image: url(/images/banner.png);">
-                        <div class="hero-overlay"></div>
-                        <div class="hero-content text-neutral-content text-center">
-                            <div class="max-w-md flex flex-col justify-center items-center space-y-8">
-                                <img class="w-20 h-20  rounded-full border-4 border-white"
-                                    src="images/WhatsApp Image 2025-01-28 at 01.03.55_345cb80b.jpg" alt="">
-                                <h1 class="mb-5 text-5xl font-bold">Istewak Hassan Tewak</h1>
-                                <p class="mb-5">
-                                    UIX Designer
+                    <div class="hero hero-on-image min-h-[min(100svh,520px)] sm:min-h-[550px]" style="background-image: url(images/banner.png);">
+                        <div class="hero-overlay z-0"></div>
+                        <div class="hero-content relative z-10 text-center px-4 py-8 sm:py-10">
+                            <div class="max-w-md w-full flex flex-col justify-center items-center space-y-6 sm:space-y-8">
+                                <img class="w-20 h-20 rounded-full border-4 border-white object-cover"
+                                    src="images/slider-2.jpg" alt="Portrait of James Rodriguez">
+                                <h3 class="mb-2 text-2xl sm:text-3xl md:text-5xl font-bold">James Rodriguez</h3>
+                                <p class="mb-2 text-base sm:text-lg">
+                                    Real estate investor
                                 </p>
-                                <p class="mb-5">
-                                    Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-                                    piece
-                                    of classical Latin literature
-                                    from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at
-                                    Hampden-Sydney College in Virginia,
-                                    looked up one of the more obscure Latin words, consectetur.
+                                <p class="mb-5 text-sm sm:text-base">
+                                    Closing a complex purchase required tight deadlines and careful title review. They
+                                    coordinated with my lender and agent seamlessly and caught issues early so we
+                                    could close on time.
                                 </p>
 
                             </div>
                         </div>
                     </div>
-                    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-                        <a href="#slide2" class="btn btn-circle">❮</a>
-                        <a href="#slide4" class="btn btn-circle">❯</a>
+                    <div
+                        class="pointer-events-none absolute left-2 right-2 top-1/2 z-20 flex -translate-y-1/2 transform justify-between gap-2 sm:left-5 sm:right-5 [&_a]:pointer-events-auto">
+                        <a href="#slide2" class="btn btn-circle btn-sm sm:btn-md" aria-label="Previous testimonial">❮</a>
+                        <a href="#slide4" class="btn btn-circle btn-sm sm:btn-md" aria-label="Next testimonial">❯</a>
                     </div>
                 </div>
                 <div id="slide4" class="carousel-item relative w-full">
-                    <div class="hero min-h-[550px]" style="background-image: url(/images/banner.png);">
-                        <div class="hero-overlay"></div>
-                        <div class="hero-content text-neutral-content text-center">
-                            <div class="max-w-md flex flex-col justify-center items-center space-y-8">
-                                <img class="w-20 h-20  h-20 rounded-full border-4 border-white"
-                                    src="images/WhatsApp Image 2025-01-28 at 01.03.55_345cb80b.jpg" alt="">
-                                <h1 class="mb-5 text-5xl font-bold">Istewak Hassan Tewak</h1>
-                                <p class="mb-5">
-                                    UIX Designer
+                    <div class="hero hero-on-image min-h-[min(100svh,520px)] sm:min-h-[550px]" style="background-image: url(images/banner.png);">
+                        <div class="hero-overlay z-0"></div>
+                        <div class="hero-content relative z-10 text-center px-4 py-8 sm:py-10">
+                            <div class="max-w-md w-full flex flex-col justify-center items-center space-y-6 sm:space-y-8">
+                                <img class="w-20 h-20 rounded-full border-4 border-white object-cover"
+                                    src="images/slider-3.jpg" alt="Portrait of Emily Chen">
+                                <h3 class="mb-2 text-2xl sm:text-3xl md:text-5xl font-bold">Emily Chen</h3>
+                                <p class="mb-2 text-base sm:text-lg">
+                                    HR director
                                 </p>
-                                <p class="mb-5">
-                                    Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-                                    piece
-                                    of classical Latin literature
-                                    from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at
-                                    Hampden-Sydney College in Virginia,
-                                    looked up one of the more obscure Latin words, consectetur.
+                                <p class="mb-5 text-sm sm:text-base">
+                                    Employment policies and workplace investigations needed a steady hand. The firm
+                                    was thorough, discreet, and helped us implement changes that reduced risk without
+                                    disrupting our culture.
                                 </p>
 
                             </div>
                         </div>
                     </div>
-                    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-                        <a href="#slide3" class="btn btn-circle">❮</a>
-                        <a href="#slide1" class="btn btn-circle">❯</a>
+                    <div
+                        class="pointer-events-none absolute left-2 right-2 top-1/2 z-20 flex -translate-y-1/2 transform justify-between gap-2 sm:left-5 sm:right-5 [&_a]:pointer-events-auto">
+                        <a href="#slide3" class="btn btn-circle btn-sm sm:btn-md" aria-label="Previous testimonial">❮</a>
+                        <a href="#slide1" class="btn btn-circle btn-sm sm:btn-md" aria-label="Next testimonial">❯</a>
                     </div>
                 </div>
             </div>
 
         </section>
+        <!-- blog -->
+        <section id="blog" class="my-16 sm:my-24 scroll-mt-24">
+            <div class="text-center space-y-7 mb-10 px-2">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold">From Our Blog</h2>
+                <p class="max-w-3xl mx-auto md:px-8">Short reads on legal updates, rights, and practical tips for
+                    individuals and businesses.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <article class="card bg-base-100 shadow-sm text-left">
+                    <div class="card-body">
+                        <p class="text-xs uppercase tracking-wide opacity-60">Employment</p>
+                        <h3 class="card-title text-lg leading-snug">What employers should know before handbook season</h3>
+                        <p class="text-sm opacity-80">A concise checklist for policy reviews, training records, and
+                            compliant documentation.</p>
+                        <div class="card-actions justify-start mt-2">
+                            <a href="#" class="link text-[#B68C5A] text-sm font-medium">Read more</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="card bg-base-100 shadow-sm text-left">
+                    <div class="card-body">
+                        <p class="text-xs uppercase tracking-wide opacity-60">Real estate</p>
+                        <h3 class="card-title text-lg leading-snug">Closing delays: how to protect your deposit</h3>
+                        <p class="text-sm opacity-80">Key contract terms, notice requirements, and when to involve
+                            counsel before a closing date slips.</p>
+                        <div class="card-actions justify-start mt-2">
+                            <a href="#" class="link text-[#B68C5A] text-sm font-medium">Read more</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="card bg-base-100 shadow-sm text-left">
+                    <div class="card-body">
+                        <p class="text-xs uppercase tracking-wide opacity-60">Tax</p>
+                        <h3 class="card-title text-lg leading-snug">Audit prep without the last-minute scramble</h3>
+                        <p class="text-sm opacity-80">Organizing records, correspondence, and timelines so you respond
+                            confidently if the IRS or state comes calling.</p>
+                        <div class="card-actions justify-start mt-2">
+                            <a href="#" class="link text-[#B68C5A] text-sm font-medium">Read more</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
         <!-- faq -->
-        <section class="my-24 text-center space-y-7">
-            <h1 class="text-5xl font-extrabold">Frequently Asked Any Questions</h1>
-            <p class="md:px-56">There are many variations of passages of Lorem Ipsum available, but the majority have
-                suffered alteration in some form,
-                by injected humour.</p>
+        <section id="faq" class="my-16 sm:my-24 text-center space-y-7 scroll-mt-24">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold px-2">Frequently Asked Questions</h2>
+            <p class="max-w-3xl mx-auto md:px-8 lg:px-16 px-2">Answers to common questions about consultations, fees,
+                timelines, and how we work with
+                new and returning clients.</p>
 
-            <div class="">
-                <div class="flex flex-col lg:flex-row justify-between items-center">
+            <div>
+                <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-10">
 
-                    <div class="max-w-xl flex flex-col gap-7">
+                    <div class="max-w-xl flex flex-col gap-7 w-full">
                         <div tabindex="0"
-                            class="collapse collapse-plus collapse-open bg-base-200 border-base-300 border shadow-sm collapseop">
-                            <div class="collapse-title font-semibold">1. Are application fee waivers available?</div>
+                            class="collapse collapse-plus collapse-open bg-base-200 border-base-300 border shadow-sm">
+                            <div class="collapse-title font-semibold">1. What should I bring to my first consultation?
+                            </div>
                             <div class="collapse-content text-sm">
-                                There are many variations of passages of Lorem Ipsum available, but the majority have
-                                suffered alteration in some form,
-                                by injected humour, .
+                                Bring any documents related to your matter—contracts, court papers, correspondence, and
+                                a short timeline of events. A list of questions helps us focus on what matters most to
+                                you in the first meeting.
                             </div>
                         </div>
-                        <div tabindex="0" class="collapse collapse-plus bg-base-200 border-base-300 border shadow-sm ">
-                            <div class="collapse-title font-semibold">1. Are application fee waivers available?</div>
+                        <div tabindex="0" class="collapse collapse-plus bg-base-200 border-base-300 border shadow-sm">
+                            <div class="collapse-title font-semibold">2. How are legal fees structured?</div>
                             <div class="collapse-content text-sm">
-                                There are many variations of passages of Lorem Ipsum available, but the majority have
-                                suffered alteration in some form,
-                                by injected humour, .
+                                Depending on the case, we may offer flat fees, hourly billing, or blended arrangements.
+                                We explain estimates, billing cycles, and likely expenses up front so you can make
+                                informed decisions.
                             </div>
                         </div>
-                        <div tabindex="0" class="collapse collapse-plus bg-base-200 border-base-300 border shadow-sm ">
-                            <div class="collapse-title font-semibold">1. Are application fee waivers available?</div>
+                        <div tabindex="0" class="collapse collapse-plus bg-base-200 border-base-300 border shadow-sm">
+                            <div class="collapse-title font-semibold">3. How quickly can you start on my case?</div>
                             <div class="collapse-content text-sm">
-                                There are many variations of passages of Lorem Ipsum available, but the majority have
-                                suffered alteration in some form,
-                                by injected humour, .
+                                After conflict checks and an engagement letter, we can often begin within a few business
+                                days. Urgent deadlines—filings, hearings, or negotiations—are prioritized when you tell
+                                us the dates involved.
                             </div>
                         </div>
-                        <div tabindex="0" class="collapse collapse-plus bg-base-200 border-base-300 border shadow-sm ">
-                            <div class="collapse-title font-semibold">1. Are application fee waivers available?</div>
+                        <div tabindex="0" class="collapse collapse-plus bg-base-200 border-base-300 border shadow-sm">
+                            <div class="collapse-title font-semibold">4. Do you offer a free initial consultation?</div>
                             <div class="collapse-content text-sm">
-                                There are many variations of passages of Lorem Ipsum available, but the majority have
-                                suffered alteration in some form,
-                                by injected humour, .
+                                We offer a limited free consultation for qualifying matters so you can understand options
+                                and next steps. If your issue needs a deeper review, we will recommend the best path and
+                                fee arrangement before work begins.
                             </div>
                         </div>
                     </div>
-                    <img src="images/faq.png" class="mt-7 md:max-w-xl
-                     rounded-lg " />
+                    <img src="images/faq.png"
+                        class="mt-7 w-full max-w-lg lg:max-w-xl mx-auto rounded-lg object-contain"
+                        alt="People discussing questions with a legal professional" />
                 </div>
             </div>
         </section>
         <!-- Contact -->
-        <section class="my-24 text-center space-y-7">
-            <h1 class="text-5xl font-extrabold">Contact With Us</h1>
-            <p class="md:px-56">There are many variations of passages of Lorem Ipsum available, but the majority have
-                suffered alteration in some form,
-                by injected humour.</p>
+        <section id="contact" class="my-16 sm:my-24 text-center space-y-7 scroll-mt-24">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold px-2">Contact Us</h2>
+            <p class="max-w-3xl mx-auto md:px-8 lg:px-16 px-2">Reach out by phone, email, or the form below. We respond
+                promptly and will suggest the
+                right attorney or practice group for your issue.</p>
+            <div
+                class="mx-auto grid w-full max-w-6xl grid-cols-1 gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(18rem,26rem)] lg:items-start lg:gap-10">
+                <div class="grid min-w-0 grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5">
+                    <div
+                        class="flex min-h-[10.5rem] flex-col items-center justify-between gap-4 rounded-xl bg-[#F3F3F3] px-5 py-6 text-center sm:min-h-[11.5rem] sm:px-6 sm:py-8">
+                        <figure class="shrink-0">
+                            <img src="images/location.png" alt="" width="48" height="48" />
+                        </figure>
+                        <div class="flex w-full flex-col gap-2">
+                            <h3 class="text-xl font-extrabold sm:text-2xl">Address</h3>
+                            <p class="text-sm leading-relaxed text-neutral-700 sm:text-base">A108 Adam Street,<br>
+                                New York, NY 535022
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="flex min-h-[10.5rem] flex-col items-center justify-between gap-4 rounded-xl bg-[#F3F3F3] px-5 py-6 text-center sm:min-h-[11.5rem] sm:px-6 sm:py-8">
+                        <figure class="shrink-0">
+                            <img src="images/call.png" alt="" width="48" height="48" />
+                        </figure>
+                        <div class="flex w-full flex-col gap-2">
+                            <h3 class="text-xl font-extrabold sm:text-2xl">Call us</h3>
+                            <p class="text-sm leading-relaxed text-neutral-700 sm:text-base">+1 (555) 123-4567<br>
+                                Mon–Fri, 9:00–18:00
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="flex min-h-[10.5rem] flex-col items-center justify-between gap-4 rounded-xl bg-[#F3F3F3] px-5 py-6 text-center sm:min-h-[11.5rem] sm:px-6 sm:py-8">
+                        <figure class="shrink-0">
+                            <img src="images/email.png" alt="" width="48" height="48" />
+                        </figure>
+                        <div class="flex w-full flex-col gap-2">
+                            <h3 class="text-xl font-extrabold sm:text-2xl">Email us</h3>
+                            <p class="text-sm leading-relaxed text-neutral-700 sm:text-base">hello@legalsolution.com<br>
+                                We reply within one business day
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="flex min-h-[10.5rem] flex-col items-center justify-between gap-4 rounded-xl bg-[#F3F3F3] px-5 py-6 text-center sm:min-h-[11.5rem] sm:px-6 sm:py-8">
+                        <figure class="shrink-0">
+                            <img src="images/time.png" alt="" width="48" height="48" />
+                        </figure>
+                        <div class="flex w-full flex-col gap-2">
+                            <h3 class="text-xl font-extrabold sm:text-2xl">Working hours</h3>
+                            <p class="text-sm leading-relaxed text-neutral-700 sm:text-base">Mon–Fri: 9:00–18:00<br>
+                                Sat: 10:00–14:00 (by appointment)
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card w-full border border-base-200 bg-base-100 shadow-sm">
+                    <div class="card-body gap-0 px-4 py-6 sm:px-6 sm:py-8">
+                        <form action="#" method="post" aria-label="Contact form">
+                            <fieldset class="fieldset space-y-7 border-0 p-0 m-0">
+                                <input type="text" name="name" class="input w-full bg-[#F3F3F3]" placeholder="Your Name"
+                                    autocomplete="name" required />
+
+                                <input type="email" name="email" class="input w-full bg-[#F3F3F3]"
+                                    placeholder="Your Email" autocomplete="email" required />
+
+                                <input type="text" name="subject" class="input w-full bg-[#F3F3F3]" placeholder="Subject"
+                                    required />
+
+                                <textarea name="message"
+                                    class="textarea textarea-bordered bg-[#F3F3F3] w-full h-32 focus:outline-primary"
+                                    placeholder="Your Message" required></textarea>
+
+                                <button type="submit" class="btn bg-[#B68C5A] text-white mt-4">Send Message</button>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
+    <footer
+        class="footer sm:footer-horizontal bg-[#111111] text-base-content p-6 sm:p-10 text-white gap-8 sm:gap-10">
+        <div>
+            <img src="images/logo.png" alt="Legal Solution">
+            <p>Trusted legal counsel for businesses and individuals. <br>
+                Clear advice, diligent preparation, and <br>
+                representation focused on your goals.</p>
+        </div>
+        <nav>
+            <h6 class="footer-title">Company</h6>
+            <a class="link link-hover" href="#">About us</a>
+            <a class="link link-hover" href="#contact">Contact</a>
+            <a class="link link-hover" href="#">Jobs</a>
+            <a class="link link-hover" href="#">Press kit</a>
+        </nav>
+        <nav>
+            <h6 class="footer-title">Legal</h6>
+            <a class="link link-hover" href="#">Terms of use</a>
+            <a class="link link-hover" href="#">Privacy policy</a>
+            <a class="link link-hover" href="#">Cookie policy</a>
+        </nav>
+        <form>
+            <h6 class="footer-title">Newsletter</h6>
+            <fieldset class="w-full max-w-xs sm:max-w-sm">
+                <p>Subscribe for our latest <br>
+                    articles. We will not send <br>
+                    spam—only useful updates.</p>
+                <br>
+                <div class="join join-vertical sm:join-horizontal w-full">
+                    <input type="email" placeholder="Email Address"
+                        class="input input-bordered text-slate-950 join-item w-full min-w-0" />
+                    <button type="button" class="btn bg-[#B68C5A] text-white join-item w-full sm:w-auto shrink-0"
+                        aria-label="Subscribe to newsletter"><i class="fa-regular fa-paper-plane"
+                            aria-hidden="true"></i></button>
+                </div>
+            </fieldset>
+        </form>
+    </footer>
 </body>
 
 </html>
